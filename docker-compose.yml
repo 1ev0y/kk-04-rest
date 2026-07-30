@@ -12,12 +12,18 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-
+    healthcheck:
+      test: ["CMD", "ping", "-h", "localhost", "-u", "root", "-pPassword"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
   kk-04-rest:
     build: .
     container_name: kk-04-rest
     depends_on:
-      - bankdb
+      bankdb:
+        condition: service_healthy
     ports:
       - "8081:8081"
     environment:
