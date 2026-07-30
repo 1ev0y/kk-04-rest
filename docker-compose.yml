@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+bankdb:
+  image: mysql:8
+  container_name: bankdb
+  environment:
+    MYSQL_ROOT_PASSWORD: rootpass
+    MYSQL_DATABASE: bankdb
+    MYSQL_USER: appuser
+    MYSQL_PASSWORD: apppass
+  ports:
+    - "3306:3306"
+  volumes:
+    - mysql-data:/var/lib/mysql
+kk-04-rest:
+  build: .
+  container_name: kk-04-rest
+  depends_on:
+    - bankdb
+  ports:
+    - "8282:8080"
+  environment:
+    SPRING_PROFILES_ACTIVE: docker
+  volumes:
+    mysql-data:
