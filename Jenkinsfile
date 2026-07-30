@@ -7,6 +7,13 @@ pipeline {
             url: 'https://github.com/neueda-learning/kk-04-rest.git'
         }
     }
+    stage ('Environment'){
+    steps{
+            sh 'java -version'
+            sh 'javac -version'
+            sh 'mvn -version'
+        }
+    }
     stage('Build') {
         steps {
             echo 'building...'
