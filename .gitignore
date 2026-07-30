@@ -1,0 +1,13 @@
+*.class
+bin/
+build/
+target/
+*.jar
+*.zip
+*.war
+.idea/
+*.iml
+*.log
+*.tmp
+*.swp
+.DS_Store
