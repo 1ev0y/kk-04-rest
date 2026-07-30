@@ -16,12 +16,6 @@ pipeline {
             }
         }
 
-        stage('Build Spring Boot') {
-            steps {
-                sh 'mvn clean package -DskipTests'
-            }
-        }
-
         stage('Stop Existing Containers') {
             steps {
                 sh 'docker-compose down || true'

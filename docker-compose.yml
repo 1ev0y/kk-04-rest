@@ -21,5 +21,6 @@ kk-04-rest:
     - "8282:8080"
   environment:
     SPRING_PROFILES_ACTIVE: docker
-  volumes:
-    mysql-data:
+
+volumes:
+  mysql-data:
