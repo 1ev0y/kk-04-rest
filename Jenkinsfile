@@ -13,10 +13,16 @@ pipeline {
         PATH = "${JAVA_HOME}/bin:${PATH}"
     }
     steps{
+            echo 'Java Version'
             sh 'java -version'
+            echo 'Javac Version'
             sh 'javac -version'
+            echo 'Maven Version'
             sh 'mvn -version'
+            echo 'JAVA_HOME'
             sh 'echo $JAVA_HOME'
+            echo 'PATH'
+            sh 'echo $PATH'
         }
     }
     stage('Build') {
