@@ -3,7 +3,7 @@ pipeline {
     stages {
     stage('checkout') {
         steps{
-            git branch: main,
+            git branch: 'main',
             url: 'https://github.com/neueda-learning/kk-04-rest.git'
         }
     }
