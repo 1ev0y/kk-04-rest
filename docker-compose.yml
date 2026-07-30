@@ -19,7 +19,7 @@ services:
     depends_on:
       - bankdb
     ports:
-      - "8282:8080"
+      - "8282:8082"
     environment:
       SPRING_PROFILES_ACTIVE: docker
 
