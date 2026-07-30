@@ -8,10 +8,15 @@ pipeline {
         }
     }
     stage ('Environment'){
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-21-amazon-corretto.x86_64/bin/java'
+        PATH = "${JAVA_HOME}/bin:${PATH}"
+    }
     steps{
             sh 'java -version'
             sh 'javac -version'
             sh 'mvn -version'
+            sh 'echo $JAVA_HOME'
         }
     }
     stage('Build') {
