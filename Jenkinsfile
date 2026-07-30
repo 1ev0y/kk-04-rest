@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_URL = 'https://github.com/Amaan-Khan14/kk-04-rest.git'
+        GIT_URL = 'https://github.com/1ev0y/kk-04-rest.git'
         BRANCH = 'main'
     }
 
