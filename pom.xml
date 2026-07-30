@@ -32,7 +32,7 @@
     <name>Module 04 Demo - REST with SpringBoot</name>
 
     <properties>
-        <java.version>25</java.version>
+        <java.version>21</java.version>
     </properties>
 
     <dependencies>
